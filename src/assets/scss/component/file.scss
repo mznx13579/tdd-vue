@@ -1,0 +1,51 @@
+$types: (
+  png: 'png.png',
+  ai: 'ai.png',
+  asf: 'ai.png',
+  avi: 'avi.png',
+  bin: 'bin.png',
+  bmp: 'bmp.png',
+  csv: 'csv.png',
+  doc: 'doc.png',
+  docx: 'docx.png',
+  eps: 'eps.png',
+  etc: 'etc.png',
+  exe: 'exe.png',
+  fla: 'fla.png',
+  flv: 'flv.png',
+  gif: 'gif.png',
+  htm: 'htm.png',
+  html: 'html.png',
+  hwp: 'hwp.png',
+  iso: 'iso.png',
+  jpeg: 'jpeg.png',
+  jpg: 'jpg.png',
+  mov: 'mov.png',
+  xls: 'xls.png',
+  xlsx: 'xls.png',
+  mp3:'mp3.png',
+  mp4:'mp4.png',
+  rtf:'rtf.png',
+  swf:'swf.png',
+  txt:'txt.png',
+  pdf:'pdf.png',
+  ppt:'ppt.png',
+  pptx:'pptx.png',
+  psd:'psd.png',
+  rar:'rar.png',
+  zip:'zip.png'
+);
+
+div.file-icon {
+  float: left;
+  display: block;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  background: url('https://static.hiworks.com/office/static/images/file_icon/etc.png');
+  @each $key, $filetype in $types {
+    &.#{$key} {
+      background: url('https://static.hiworks.com/office/static/images/file_icon/' + $filetype);
+    }
+  }
+}

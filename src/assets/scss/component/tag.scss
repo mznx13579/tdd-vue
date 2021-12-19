@@ -1,0 +1,53 @@
+.hw-tag {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  color: #333;
+  border: 1px solid #d6d6d6;
+  border-radius: 2px;
+  background: #f8f8f8;
+  height: 24px;
+  line-height: 22px;
+  margin: 0 8px 0 0;
+  white-space: nowrap;
+  transition-duration: .1s;
+  @include clearfix();
+
+  .tag-name {
+    float: left;
+    @include truncate(200px);
+  }
+
+  // 공유
+  &.shared {
+    border-color: #909090;
+    background: #f6f6f6;
+    color: #333;
+  }
+
+  &.closable {
+    padding: 0 3px 0 6px; 
+    .hw-icon {
+      position: relative;
+      top: -1px;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      margin-left: 2px;
+      margin-bottom: 2px;
+      .fa-times {
+        color: #909090;
+        font-size: 12px;
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+  }
+  
+  &[type="button"] {
+    outline: none;
+  }
+}

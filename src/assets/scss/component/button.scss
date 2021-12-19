@@ -1,0 +1,90 @@
+//! 주소 추가 아이콘(+) 버튼
+.btn-plus {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  width: 34px;
+  height: 34px;
+  padding: 6px;
+  color: #909090;
+  .gi-plus {
+    font-size: 16px;
+  }
+  &:hover,
+  &:focus {
+    color: #909090;
+    border-color: #d6d6d6;
+    background-color: #f6f6f6;
+    outline: none;
+  }
+}
+
+//! 내 공용 메일 관리
+.btn-manage-mymail, .btn-manage-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  height: 40px;
+  border: 1px solid #6d88a4;
+  font-size: 15px !important;
+  letter-spacing: -0.3px;
+  .label {
+    color: #6d88a4;
+  }
+  .gi-cog {
+    font-size: 16px;
+    margin-right: 7px;
+    color: #6d88a4 !important;
+  }
+  &:hover,
+  &:focus {
+    color: #6d88a4;
+    background-color: #f7faff;
+    outline: none;
+  }
+}
+
+//! 긴 문자열을 위한 버튼(예: 이전 버전으로 돌아가기)
+.hw-btn-string {
+  display: inline-block;
+  height: 34px;
+  line-height: 32px;
+  //padding: 0 28px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 17px;
+  font-size: 13px;
+  &:hover {
+    color: currentColor;
+  }
+  i[class*="gis"] {
+    color: #676767;
+  }
+}
+
+// Deprecated
+.pill-shape-outline {
+  border-radius: 4px;
+  color: #333 !important;
+  padding: 0 14px 0 !important;
+  min-height: 34px !important;
+  height: 34px !important;
+  border: solid 1px #d6d6d6 !important;
+  background-color: #ffffff !important;
+  &:hover {
+    background: rgba(159,166,173,0.3) !important;
+  }
+  i.icon {
+    color: #909090;
+  }
+  &[disabled], &:disabled {
+    &:hover {
+      background: #fff !important;
+      outline: none !important;
+    }
+  }
+}

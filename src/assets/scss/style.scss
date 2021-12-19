@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+//base
+@import "base/reset";
+@import "base/variables";
+
+//mixins
+@import "mixins/clearfix";
+@import "mixins/button";
+@import "mixins/truncate";
+@import "mixins/truncateFlexChild";
+@import "mixins/formStatusStyle";
+@import "mixins/prefixList";
+@import "mixins/mediaQuery";
+
+//helper
+@import "helper/float";
+@import "helper/clearfix";
+@import "helper/display";
+@import "helper/align";
+@import "helper/sizing";
+@import "helper/text";
+@import "helper/spaceGenerator";
+@import "helper/cursor";
+@import "helper/position";
+@import "helper/list";
+@import "helper/print";
+@import "helper/flex";
+@import "helper/colors";
+
+//component
+@import "component/button";
+@import "component/checkbox";
+@import "component/radio";
+@import "component/dialog";
+@import "component/message";
+@import "component/tab";
+@import "component/input";
+@import "component/tag";
+@import "component/select";
+@import "component/tooltip";
+@import "component/dropdown";
+@import "component/icon";
+@import "component/popover";
+@import "component/table";
+@import "component/addressbook";
+@import "component/file";
+
+//fontawesome
+@import "vendor/fontawesome-pro-5.7.1-web";
+
+
+/* 스크롤 모양 변경(IE 제외) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 8px;
+  background: #e1e1e1;
+  &:hover {
+      background: #797979;
+  }
+}

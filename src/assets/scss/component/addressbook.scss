@@ -1,0 +1,221 @@
+@import '@/assets/scss/mixins/button.scss';
+
+.addressbook-tab {
+  .search-wrap { //! 검색창
+    width: 471px;
+    //margin-top: 26px;
+    margin-bottom: 20px;
+    float: left;
+  }
+  .box-item {
+    width: 230px;
+    border: 1px solid #d6d6d6;
+  }
+  .scroll-box {
+    width: 100%;
+    height: 430px;
+    overflow-y: auto;
+  }
+  .category-wrap { //! 조직도 영역
+    float: left;
+    max-height: 464px;
+    .main-category {
+      float: left;
+      margin-right: 11px;
+      .header {
+        width: 230px;
+        height: 32px;
+        background: #f8f8f8;
+        border-bottom: 1px solid #d6d6d6;
+        font-weight: bold;
+        color: #333;
+        padding: 5px 0 5px 10px;
+        @include truncate(100%);
+      }
+      .body {
+        float: left;
+        width: 230px;
+        height: 424px;
+        padding: 10px;
+        overflow: auto;
+      }
+    }
+    .sub-category {
+      float: left;
+      .footer {
+        height: 38px;
+        background: #f8f8f8;
+        border-top: 1px solid #d6d6d6;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        .bar {
+          // @include bar();
+          margin: 0 10px;
+        }
+      }
+      .scroll-box {
+        height: 424px;
+      }
+    }
+    @include clearfix();
+  }
+  .category-transfer { //! 이동 아이콘 영역
+    float: left;
+    width: 86px;
+    height: 464px;
+    max-height: 464px;
+    .receiver {
+      margin-top: 25px;
+    }
+    .reference {
+      margin-top: 94px;
+    }
+    .hidden-reference {
+      margin-top: 92px;
+    }
+    .btn-transfer { //! 이동(>,<) 아이콘 버튼
+      @include hw-button();
+      width: 34px;
+      height: 34px;
+      padding: 6px;
+      color: #909090;
+      border-color: #d9d9d9;
+      .fa-plus {
+        font-size: 16px;
+      }
+      &:hover,
+      &:focus {
+        color: #909090;
+        border-color: #d6d6d6;
+        background-color: #f6f6f6;
+      }
+      .fa-chevron-right {
+        margin-left: 2px;
+      }
+    }
+  }
+  .category-transfer{ 
+    &.one {
+      .receiver {
+        margin-top: 180px;
+      }
+    }
+    &.two {
+      .receiver {
+        margin-top: 75px;
+      }
+    }
+  }
+
+
+  .category-moved { //! 이동된 리스트 결과 영역
+    float: left;
+    margin-top: -32px;
+    max-height: 496px;
+    .header {
+      margin-bottom: 8px;
+      height: 24px;
+      .title {
+        color: #333;
+        cursor: default;
+        user-select: text;
+        &:hover,
+        &:focus {
+          color: #333;
+        }
+      }
+      .count-number {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+        font-weight: 600;
+        color: #2985db;
+        font-size: 14px;
+        margin-bottom: 1px;
+      }
+      @include clearfix();
+    }
+    .reference,
+    .hidden-reference {
+      margin-top: 12px;
+    }
+    .receiver,
+    .reference {
+      .scroll-box {
+        height: 125px;
+      }
+    }
+    .hidden-reference {
+      .scroll-box {
+        height: 117px;
+      }
+    }
+  }
+
+  .category-moved{ 
+    &.one {
+      .scroll-box {
+        height: 461px;
+      }
+    }
+    &.two {
+      .scroll-box {
+        height: 200px;
+      }
+    }
+
+    .btn-transfer { //! 이동(위 아래 ) 아이콘 버튼
+      @include hw-button();
+      width: 20px;
+      height: 20px;
+      min-height: 0px;
+      padding: 6px;
+      font-size:12px;
+      color: #909090;
+      border-color: #d9d9d9;
+      &:hover,
+      &:focus {
+        color: #909090;
+        border-color: #d6d6d6;
+        background-color: #f6f6f6;
+      }
+      .fa-chevron-right {
+        margin-left: 2px;
+      }
+    }
+  }
+}
+
+
+//! 탭 스타일
+.addressbook {
+  .el-tabs__header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    display: block;
+    .el-tabs__nav-wrap {
+      .el-tabs__nav-scroll {
+        .el-tabs__nav {
+          border-color: #ebebeb;
+          .el-tabs__item {
+            background: transparent;
+            height: 40px;
+            line-height: 38px;
+            min-width: 120px;
+            padding: 0;
+            &.is-active {
+              background: #fff;
+              border-bottom: 2px solid #ebebeb;
+            }
+          }
+        }
+      }
+      &:after {
+        background-color: #ebebeb;
+      }
+    }
+  }
+}

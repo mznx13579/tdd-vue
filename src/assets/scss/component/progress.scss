@@ -1,0 +1,22 @@
+.board-poll {
+  .el-progress {}
+
+  .el-progress-bar__outer {
+    border-radius: 0;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+  }
+
+  .el-progress-bar__inner {
+    border-radius: 0;
+    text-align: left;
+
+
+  }
+
+  .el-progress-bar__inner[style="width: 0%;"] {
+    .el-progress-bar__innerText {
+      color: #909090;
+    }
+  }
+}

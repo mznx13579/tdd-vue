@@ -1,0 +1,158 @@
+@mixin hw-button() {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #333;
+  padding: 0px 10px 0px;
+  min-height: 34px;
+  height: 34px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  //hover & focus
+  &:hover, &:focus {
+    background: #ebebeb;
+    border-color: #ebebeb;
+    outline: none;
+  }
+
+  //disabled
+  &[disabled], &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    &:hover {
+      background: transparent;
+      border-color: transparent;
+      outline: none;
+    }
+  }
+
+  //icon
+  .icon {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 6px;
+    &.gi-chart-bar {
+      margin-bottom: 5px;
+    }
+  }
+  
+  > .label + .icon {
+    margin-left: 6px;
+    margin-right: 0;
+  }
+
+  //이웃하는 버튼 간격
+  & + .hw-button {
+    margin-left: 14px;
+  }
+
+  //이웃하는 버튼 간격
+  & + .hw-button.sm {
+    margin-left: 10px;
+  }
+
+  //primary
+  &.primary {
+    @include colorVariant($primary-color, $primary-color-hover, #fff);
+  }
+
+  //secondary
+  &.secondary {
+    @include colorVariant($secondary-color, $secondary-color-hover, #333);
+  }
+
+  //info
+  &.info {
+    @include colorVariant($info-color, $info-color-hover, #fff);
+  }
+  
+  //outline
+  &.outline {
+    @include colorVariant(#fff, rgba(159,166,173,0.3), #333, #d6d6d6);
+  }
+
+  //text
+  &.text {
+    color: $primary-color;
+    padding: 0;
+    height: auto;
+    min-height: 0;
+    background: transparent;
+    border: none;
+    &:hover,
+    &:focus {
+      color: $primary-color-hover;
+    }
+    &[disabled],
+    &:disabled {
+      &:hover {
+        color: $primary-color;
+        background: transparent;
+        border-color: transparent;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.sm {
+    padding: 0px 10px 0px;
+    min-height: 30px;
+    height: 30px;
+    font-size: 13px;
+    .label {
+      line-height: 28px;
+    }
+  }
+
+  &.outline-gray {
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    color: #333;
+    &:hover {
+      background: #f6f6f6;
+    }
+    &:focus {
+      > i {
+        color: #575757;
+      }
+    }
+    &[disabled], &:disabled {
+      border-color: #f2f2f2;
+      background: #ffffff;
+      &, > i {
+        color: #d0d0d0;
+      }
+    }
+  }
+
+}
+
+//color variation
+@mixin colorVariant($bgColor, $bgHoverColor, $color, $borderColor: $bgHoverColor) {
+  background-color: $bgColor;
+  border-color: $borderColor;
+  color: $color;
+  padding: 0px 20px 0px;
+  &:hover,
+  &:focus {
+    background-color: $bgHoverColor;
+    border-color: $bgHoverColor;
+  }
+  &[disabled],
+  &:disabled {
+    &:hover {
+      color: $color;
+      background-color: $bgColor;
+      border-color: $bgHoverColor;
+    }
+  }
+}

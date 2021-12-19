@@ -1,0 +1,3 @@
+[submodule "src/utils"]
+	path = src/utils
+	url = https://common:T6sP8cDwbQcKraeZeV7a@gitlab.gabia.com/ui/gabia-fe-common-ts.git

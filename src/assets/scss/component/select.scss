@@ -1,0 +1,118 @@
+.el-select {
+  vertical-align: middle;
+  &:hover {
+    .el-input__inner {
+      border-color: #c0c4cc;
+    }
+  }
+  .el-input__inner {
+    font-weight: 400;
+    padding-right: 30px;
+    @include truncate(calc(100% - 40px));
+    box-sizing: content-box;
+  }
+  .el-input { //! disabled style
+    &.is-disabled {
+      .el-input__inner {
+        background: #f8f8f8;
+        border-color: #d6d6d6;
+        cursor: default;
+        color: #acacac;
+        user-select: none;
+        &::placeholder {
+          color: #acacac;
+          opacity: 1; /* Firefox */
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: #acacac;
+        }
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: #acacac;
+        }
+        &:hover {
+          border-color: #d6d6d6;
+        }
+      }
+      .el-input__icon {
+        cursor: default;
+      }
+    }
+  }
+}
+.el-select-dropdown {  
+  &.el-popper[x-placement^="bottom"] {
+    margin-top: 3px;
+  }
+  &.el-popper[x-placement^="top"] {
+    margin-bottom: 3px;
+  }
+}
+.el-select-dropdown__item {
+  &.hover {
+    background: #eff4fc;
+  }
+  &.selected {
+    background: #f8f8f8;
+    color: #333;
+    font-weight: normal;
+  }
+  &.is-disabled {
+    cursor: default;
+  }
+}
+
+.el-select__caret.el-input__icon.el-icon-arrow-up {
+  color: #909090;
+}
+
+
+
+
+.el-select-dropdown.el-popper.no-match-word{
+  .el-select-dropdown__empty {
+    display: none;
+  }
+}
+
+
+.select-wrapper {
+  position: relative;
+  vertical-align: middle;
+  &:after {
+    font-family: "Font Awesome 5 Pro";
+    content: '\f107';
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #434B67;
+    pointer-events: none;
+  }
+  // How to Style Select Fields using CSS and Font Awesome
+  // https://byprimer.co/blog/style-select-fields-using-css/
+  select {
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    width: 100%;
+    font-size: 14px;
+    padding: 0 10px;
+    height: 34px;
+    outline: 0;
+    color: #333;
+    font-weight: 400;
+    
+    &:hover, &:focus {
+      border-color: $primary-color;
+    }
+
+    /* Here's the code we need */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+}

@@ -1,0 +1,179 @@
+.table-header {
+  .title {
+    font-size: 15px;
+    font-weight: 600;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}
+.setting-table {
+  width: 100%;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  border-collapse: collapse;
+  table-layout: fixed;
+  tr {
+    th, td {
+      font-size: 14px;
+      padding: 3px 14px;
+      vertical-align: middle;
+      background: #eff4fc;
+      border-right: 1px solid #ebebeb;
+      border-bottom: 1px solid #ebebeb;
+      word-break: break-word;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    th {
+      font-weight: normal;
+      border-color: #d6d6d6;
+      height: 38px;
+    }
+    td {
+      background: #fff;
+      height: 40px;
+    }
+    &:last-child {
+      > td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  // sum
+  tfoot tr {
+    th, td {
+      background: #fff;
+    }
+    &:first-child {
+      th, td {
+        border-top: 1px solid #ebebeb;
+      }
+    }
+    &.sum-row {
+      th, td {
+        background: #f8f8f8;
+      }
+    }
+    &.final-sum-row {
+      th, td {
+        background: #ebebeb;
+      }
+    }
+  }
+
+  // horizontal table
+  &> tbody > tr {
+    & > th {
+      text-align: left;
+    }
+  }
+  
+}
+
+.dialog-table {
+  width: 100%;
+  border-bottom: 1px solid #d6d6d6;
+  font-size: 14px;
+  .header {
+    border: 1px solid #d6d6d6;
+    @include clearfix();
+    .cell {
+      display: inline-block;
+      width: 25%;
+      text-align: center;
+      background: #f9f9f9;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+  }
+  .body {
+    overflow-y: auto;
+    border-left: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    .row {
+      width: 100%;
+      height: 40px;
+      display: table-row;
+      .cell {
+        display: table-cell;
+        width: 25%;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: 1px solid #f6f6f6;
+      }
+      &:hover {
+        //background: #eff4fc;
+      }
+      @include clearfix();
+    }
+    .d-table {
+      &:last-child {
+        .cell {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.scrollbar-table {
+  width: 100%;
+  border-bottom: 1px solid #d6d6d6;
+  font-size: 14px;
+  .header {
+    border: 1px solid #d6d6d6;
+    @include clearfix();
+    .cell {
+      display: inline-block;
+      width: 25%;
+      text-align: center;
+      padding: 14px 0;
+      font-weight: 600;
+    }
+  }
+  .scrollbar-box {
+    border-left: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    .row {
+      width: 100%;
+      height: 45px;
+      display: table-row;
+      .cell {
+        display: table-cell;
+        width: 25%;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: 1px solid #f6f6f6;
+      }
+      &:hover {
+        background: #eff4fc;
+      }
+      @include clearfix();
+    }
+  }
+}
+
+.input-row-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  th, td {
+    font-size: 13px;
+    text-align: left;
+  }
+  td {
+    padding: 5px 10px 5px 0;
+    .hw-icon > i.gi-plus-alt {
+      color: $primary-color;
+    }
+  }
+}

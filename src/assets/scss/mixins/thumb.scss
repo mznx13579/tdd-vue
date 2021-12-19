@@ -1,0 +1,11 @@
+@mixin thumb($size: 2em) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #E1E1E1;
+  > img {
+    width: 100%;
+  }
+}

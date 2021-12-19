@@ -1,0 +1,14 @@
+@mixin bar($size: 1em, $color: #ddd) {
+  position: relative;
+  &:after {
+    display: block;
+    content: '';
+    width: 1px;
+    height: $size;
+    position: absolute;
+    right: 0;
+    top: calc(50% - #{$size}/2);
+    background-color: $color;
+    // margin-top: 2px;
+  }
+}

@@ -1,0 +1,22 @@
+@mixin createPrefixList($prefixString) {
+  > li {
+    display: table;
+    width: 100%;
+    text-align: left;
+    &:before {
+      display: table-cell;
+      width: 12px;
+      content: $prefixString;
+    }
+  }
+}
+
+.hw-list-star {
+  @include createPrefixList('*');
+}
+.hw-list-dot {
+  @include createPrefixList('\2022');
+}
+.hw-list-dash {
+  @include createPrefixList('-');
+}

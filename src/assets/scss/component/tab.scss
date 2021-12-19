@@ -1,0 +1,100 @@
+//! 환경설정 페이지 탭
+.setting-tab {
+  .el-tabs__header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: block;
+    .el-tabs__nav-wrap {
+      .el-tabs__nav-scroll {
+        .el-tabs__nav {
+          border-color: #ebebeb;
+          .el-tabs__item {
+            font-size: 15px;
+            color: #999;
+            background: transparent;
+            height: 40px;
+            line-height: 38px;
+            min-width: 110px;
+            width: 110px;
+            padding: 0;
+            &.is-active {
+              background: #fff;
+              border-bottom: 2px solid #ebebeb;
+              color: #2985db;
+            }
+            &:hover {
+              color: $primary-color;
+            }
+            &:nth-child(5) { //! 수신거부 설정
+              width: 140px;
+            }
+            &:nth-child(6) { //! 사용자 변경
+              width: 130px;
+            }
+          }
+        }
+      }
+      &:after {
+        background-color: #ebebeb;
+      }
+    }
+  }
+
+  .el-tabs__content {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    min-height: calc(100vh - #{$headerHeight} - 48px - 40px); // 100vh - headerHeight - .contents-wrap vPadding - el-tab-nav Height
+  }
+}
+// 모달 내부에 위치한 탭의 경우에는 본문높이값을 적용하지 않음
+.el-dialog .setting-tab .el-tabs__content {
+  min-height: 0;
+}
+
+
+
+.el-tabs__nav {
+  width: 100%;
+  .el-tabs__item {
+    text-align: center;
+  }
+}
+
+// 탭 아이템이 고정폭이 아닌 유동적으로 늘어날 수 있는 스타일
+.flexible-tab {
+  $tabHorizontalPadding: 24px;
+  //! <el-tab>의 stretch 속성을 true로 줘야 함
+  .el-tabs__nav.is-stretch {
+    .el-tabs__item {
+      font-size: 15px;
+      color: #999;
+      background: transparent;
+      height: 40px;
+      line-height: 38px;
+      padding: 0 $tabHorizontalPadding;
+      flex: 0 1 auto;  // flex child들이 자신의 크기에 맞게 'inline-block'-like로 동작
+
+      &.is-active {
+        background: #fff;
+        border-bottom: 2px solid #ebebeb;
+        color: $primary-color;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .el-tabs__active-bar {
+      box-sizing: content-box;
+      padding: 0 $tabHorizontalPadding;
+      left: -#{$tabHorizontalPadding};
+      background-color: $primary-color;
+    }
+  }
+
+  .el-tabs__content {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+}

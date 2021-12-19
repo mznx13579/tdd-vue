@@ -1,0 +1,257 @@
+.el-input__inner {
+  border-radius: 2px;
+}
+/* input */
+.hw-input-wrap {
+  display: block;
+  .hw-input {
+    font-size: 14px;
+    padding: 0 10px;
+    height: 34px;
+    border-radius: 2px;
+    @include formStatusStyle();
+  }
+}
+
+/* element-ui(select) */
+.el-select {
+  .el-input__inner {
+    color: #333;
+    padding: 0 10px;
+    height: 32px;
+    border-color: #d6d6d6;
+  }
+  .el-input__suffix {
+    right: 2px;
+  }
+}
+.el-select-dropdown {
+  border-radius: 0;
+  border-color: #d6d6d6;
+}
+
+/* - Internet Explorer 10–11
+   - Internet Explorer Mobile 10-11 */
+:-ms-input-placeholder {
+  color: #c4c4c4 !important;
+}
+
+/* Edge (also supports ::-webkit-input-placeholder) */
+::-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+// .el-date-editor{
+//   &.el-input{
+//     .el-input__inner{
+//       height: 34px;
+//     }
+//     .el-input__prefix {
+//       top:3px;
+//     }
+//     .el-input__suffix {
+//       top:3px;
+//     }
+//   }
+// }
+
+
+.el-date-editor {
+  &.hw-calendar {
+    width: 100%;
+    .el-input__inner {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      min-height: 34px;
+      font-size: 14px;
+      padding: 0 10px;
+      border: 1px solid #d6d6d6;
+      transition-duration: .2s;
+      box-sizing: border-box;
+      &:hover {
+        border-color: #c0c4cc;
+      }
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+      &::placeholder {
+        color: #acacac;
+      }
+    }
+    .el-input__prefix {
+      // position: absolute;
+      // top: calc(50% - 15px);
+      right: 10px;
+      left: auto;
+      // height: auto;
+      font-size: 16px;
+      .el-input__icon {
+        display: block;
+        width: 14px;
+        color: #333;
+        line-height:30px;
+        &.gi-calendar {
+          color: #909090;
+          line-height: 33px;
+        }
+      }
+    }
+    &.is-disabled {
+      .el-input__inner {
+        background: #f8f8f8;
+        border-color: #d6d6d6;
+        cursor: default;
+        color: #999;
+      }
+      .el-input__prefix {
+        .el-input__icon {
+          cursor: default;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+.el-picker-panel {
+  border-radius: 0;
+  border-color: #d6d6d6;
+
+  &.no-btn{
+    .el-date-picker__header{
+      button{
+        display: none;
+      }
+    }
+  }
+}
+
+// type: radio 버튼그룹 모양
+.hw-btntype-radio-group {
+  $HW_BTNTYPE_RADIO_BORDER_DEFAULT: #e6e6e6;
+  $HW_BTNTYPE_RADIO_BORDER_ACTIVE: #000;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 0;
+  .hw-btntype-radio-label {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    .hw-btntype-radio-input {
+      opacity: 0;
+      outline: none;
+      position: absolute;
+      z-index: -1;
+      &:checked+.hw-btntype-radio-text {
+        background-color: #fff;
+        color: #333;
+        border-color: $HW_BTNTYPE_RADIO_BORDER_ACTIVE;
+      }
+    }
+    .hw-btntype-radio-text {
+      line-height: 1;
+      white-space: nowrap;
+      vertical-align: middle;
+      background: #fff;
+      border: 1px solid $HW_BTNTYPE_RADIO_BORDER_DEFAULT;
+      border-left-color: transparent;
+      color: #a8a8a8;
+      -webkit-appearance: none;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 0;
+    }
+    &:first-child {
+      .hw-btntype-radio-text {
+        border-left-color: $HW_BTNTYPE_RADIO_BORDER_DEFAULT;
+        border-radius: 2px 0 0 2px;
+      }
+    }
+    &:last-child {
+      .hw-btntype-radio-text {
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+}
+
+// type: radio 버튼그룹 모양 (하이웍스 내 일반타입)
+
+.hw-btntype-radio-group-nomal {
+  $HW_BTNTYPE_RADIO_BORDER_DEFAULT: #ebebeb;
+  $HW_BTNTYPE_RADIO_BORDER_ACTIVE: #2985db;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 0;
+  .hw-btntype-radio-label {
+    position: relative;
+    display: inline-block;
+    outline: none;
+    .hw-btntype-radio-input {
+      opacity: 0;
+      outline: none;
+      position: absolute;
+      z-index: -1;
+      &:checked + .hw-btntype-radio-text {
+        background-color: #fff;
+        color: #2985db;
+        border-color: $HW_BTNTYPE_RADIO_BORDER_ACTIVE;
+      }
+    }
+    .hw-btntype-radio-text {
+      display: inline-block;
+      width: 128px;
+      line-height: 1;
+      white-space: nowrap;
+      vertical-align: middle;
+      background: #ebebeb;
+      border: 1px solid $HW_BTNTYPE_RADIO_BORDER_DEFAULT;
+      border-left-color: transparent;
+      color: #333333;
+      -webkit-appearance: none;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 8px 32px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 0;
+    }
+    &:first-child {
+      .hw-btntype-radio-text {
+        border-left-color: $HW_BTNTYPE_RADIO_BORDER_DEFAULT;
+        border-radius: 2px 0 0 2px;
+      }
+    }
+    &:last-child {
+      .hw-btntype-radio-text {
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+}
+
+.el-input-number {
+  width: 100%;
+  .el-input-number__increase,
+  .el-input-number__decrease {
+    border-radius: 0 !important;
+  }
+  &.is-controls-right[class*=small] {
+    [class*=increase], [class*=decrease] {
+      line-height: 16px;
+    }
+  }
+}
+.el-input--small .el-input__inner {
+  height: 34px;
+  line-height: 34px;
+}
