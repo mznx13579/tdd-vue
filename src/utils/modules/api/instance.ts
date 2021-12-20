@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { setInterceptors } from './interceptors';
+import { environment } from '../environment';
 import { cookie } from '../cookie';
+
+interface ApiCommonInfo {
+  service: string;
+  endPoint?: string;
+}
 
 //* 공통 기본 header config
 const baseHeaders = {
@@ -13,6 +19,11 @@ const selectRequestHeader = (options: any) => {
   return options.hasOwnProperty('headers') ? options.headers : baseHeaders;
 };
 
+//* axios request url 앞 부분 설정하는 부분
+const getBaseUrl = ({ service, endPoint }: ApiCommonInfo) => {
+  return environment.getApiUrlFromEnv(service) + (endPoint ? `/${endPoint}` : '');
+};
+
 //* axios 공통 기본 config object 만드는 부분
 const baseAxiosConfig = (baseURL: string, headers: any) => {
   return {
@@ -23,15 +34,15 @@ const baseAxiosConfig = (baseURL: string, headers: any) => {
 };
 
 const instance = {
-  create(baseUrl: string, options: any = {}) {
+  create(apiCommonInfo: ApiCommonInfo, options: any = {}) {
     const headers = selectRequestHeader(options);
     if (options.hasOwnProperty('headers')) {
       delete options.headers;
     }
-    const instance = axios.create({ ...baseAxiosConfig(baseUrl, headers), ...options });
+    const instance = axios.create({ ...baseAxiosConfig(getBaseUrl(apiCommonInfo), headers), ...options });
     return setInterceptors(instance);
   },
-  createWithAuth(baseUrl: string, options: any = {}) {
+  createWithAuth(apiCommonInfo: ApiCommonInfo, options: any = {}) {
     const headers = selectRequestHeader(options);
     if (options.hasOwnProperty('headers')) {
       delete options.headers;
@@ -40,7 +51,7 @@ const instance = {
       ...headers,
       Authorization: `Hiworks ${cookie.getCookie('PHPSESSID')}`,
     };
-    const instance = axios.create({ ...baseAxiosConfig(baseUrl, authHeaders), ...options });
+    const instance = axios.create({ ...baseAxiosConfig(getBaseUrl(apiCommonInfo), authHeaders), ...options });
     return setInterceptors(instance);
   },
 };
