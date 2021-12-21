@@ -6,8 +6,6 @@ import _ from 'lodash';
 import moment from 'moment';
 import EVENT from '@/events/index';
 
-import DefaultLayout from '@/layouts/WebLayout.vue';
-import EmptyLayout from '@/layouts/EmptyLayout.vue';
 import i18n from './i18n';
 
 import App from './App.vue';
@@ -26,8 +24,6 @@ Vue.prototype.HW_EVENT_NAMES = EVENT;
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI, { locale });
-Vue.component('default-layout', DefaultLayout);
-Vue.component('empty-layout', EmptyLayout);
 
 new Vue({
   router,

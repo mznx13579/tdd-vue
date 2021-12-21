@@ -9,6 +9,11 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     component: () => import(`@/pages/Home.vue`),
   },
+  {
+    path: '/money',
+    name: 'Money',
+    component: () => import('@/pages/Money.vue'),
+  },
 ];
 
 const router = new VueRouter({
