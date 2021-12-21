@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex, { StoreOptions } from 'vuex';
-import userModule from './user';
+import moneyModule from './money';
 import { RootState } from './types';
 
 Vue.use(Vuex);
@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const store: StoreOptions<RootState> = {
   modules: {
     // Example: exampleModule
-    User: userModule,
+    Money: moneyModule,
   },
 };
 
