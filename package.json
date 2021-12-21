@@ -8,12 +8,12 @@
     "test:unit": "vue-cli-service test:unit",
     "test": "jest --watch --verbose --coverage",
     "lint": "vue-cli-service lint",
-    "postinstall": "node ./deleteVuexType.ts --experimental-modules"
+    "postinstall": "node ./deleteVuexType.ts --experimental-modules",
+    "e2e": "node ./node_modules/cypress/bin/cypress open"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "cypress": "^9.1.1",
     "element-ui": "^2.15.1",
     "git-describe": "^4.0.4",
     "given2": "^2.1.7",
@@ -47,6 +47,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.1.4",
+    "cypress": "^9.1.1",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.3.1",
