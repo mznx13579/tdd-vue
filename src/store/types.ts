@@ -1,13 +1,13 @@
 import { CommitOptions, DispatchOptions, Store } from 'vuex';
-import { UserMutations } from './user/mutations';
-import { UserActions } from './user/actions';
-import { UserGetters } from './user/getters';
-import { UserState } from './user/state';
+import { MoneyMutations } from './money/mutations';
+import { MoneyActions } from './money/actions';
+import { MoneyGetters } from './money/getters';
+import { MoneyState } from './money/state';
 
-export type RootState = { User: UserState };
-type MergedMutations = UserMutations;
-type MergedGetters = UserGetters;
-type MergedActions = UserActions;
+export type RootState = { Money: MoneyState };
+type MergedMutations = MoneyMutations;
+type MergedGetters = MoneyGetters;
+type MergedActions = MoneyActions;
 
 /* 하단은 건들지 마시오 */
 type CustomMutations = {
