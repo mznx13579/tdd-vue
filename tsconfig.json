@@ -27,7 +27,8 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "types": ["cypress"]
   },
   "include": [
     "src/**/*.ts",
@@ -36,7 +37,8 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "src/types/global.d.ts",
-    "src/types/project.d.ts"
+    "src/types/project.d.ts",
+    "**/*.ts"
   ],
   "exclude": [
     "node_modules",
