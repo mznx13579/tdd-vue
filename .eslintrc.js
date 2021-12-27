@@ -16,7 +16,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
   },
-	plugins: ['prettier'],
+	plugins: ['prettier', 'cypress'],
   globals: {
     context: 'readonly',
     given: 'readonly',

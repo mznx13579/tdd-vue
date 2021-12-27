@@ -36,9 +36,6 @@ module.exports = {
           @import "@/assets/scss/base/variables.scss";
           @import "@/assets/scss/mixins/clearfix.scss";
           @import "@/assets/scss/mixins/truncate.scss";
-          @import "@/assets/scss/mixins/truncateFlexChild.scss";
-          @import '@/assets/scss/mixins/bar.scss';
-          @import "@/assets/scss/mixins/mediaQuery.scss";
         `,
       },
     },

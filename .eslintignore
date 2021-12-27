@@ -1,2 +1,2 @@
-utils
+src/utils/**
 src/**/gtris

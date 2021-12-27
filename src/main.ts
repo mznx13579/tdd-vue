@@ -6,8 +6,6 @@ import _ from 'lodash';
 import moment from 'moment';
 import EVENT from '@/events/index';
 
-import i18n from './i18n';
-
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -28,6 +26,5 @@ Vue.use(ElementUI, { locale });
 new Vue({
   router,
   store,
-  i18n,
   render: (h) => h(App),
 }).$mount('#app');
