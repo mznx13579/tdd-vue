@@ -14,6 +14,11 @@ const routes: Array<RouteConfig> = [
     name: 'Money',
     component: () => import('@/pages/Money.vue'),
   },
+  {
+    path: '/time',
+    name: 'Time',
+    component: () => import('@/pages/Time.vue'),
+  },
 ];
 
 const router = new VueRouter({
