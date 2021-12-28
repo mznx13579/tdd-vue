@@ -9,7 +9,7 @@
       <p class="money__wrap--unit">{{ `${money}만원` }}</p>
     </div>
     <button v-if="!showDesc" class="next-button" @click="goNext">다음!</button>
-    <button v-else class="next-button" @click="confirm">확인!</button>
+    <button v-else class="next-button" @click="confirm">확인</button>
   </div>
 </template>
 
@@ -39,7 +39,8 @@ export default Vue.extend({
     },
 
     confirm() {
-      console.log('comfirm');
+      window.localStorage.setItem('money', String(this.money));
+      this.$router.push('/time');
     },
   },
 });

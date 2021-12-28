@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Input Money', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8080/money');
@@ -23,12 +25,18 @@ describe('Input Money', () => {
     });
 
     it(`버튼이 '확인'으로 바뀌어야 한다.`, () => {
-      cy.get('.next-button').should('have.text', '확인!');
+      cy.get('.next-button').should('have.text', '확인');
       cy.get('.next-button').should('not.have.text', '다음!');
     });
 
     it(`'확인!' 버튼을 누르면 다음 페이지로 이동한다.`, () => {
-      cy.contains('확인!').click();
+      cy.contains('확인')
+        .click()
+        .then(() => {
+          expect(localStorage.getItem('money')).to.eq('4300');
+        });
+
+      cy.url().should('includes', '/time');
     });
   });
 });
