@@ -9,4 +9,10 @@ describe('Time', () => {
     cy.get('.food').first().click();
     cy.get('.time').should('exist');
   });
+
+  it('가격을 입력하면, 음식 리스트가 사라진다.', () => {
+    cy.get('.cost-input').clear().type('10000');
+    cy.get('.cost-button').click();
+    cy.get('.food-list').should('not.exist');
+  });
 });

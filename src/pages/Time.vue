@@ -1,6 +1,10 @@
 <template>
   <div class="time">
-    <div class="food-list">
+    <div class="time__cost">
+      <input v-model.number="cost" class="time__cost--input cost-input" />
+      <button class="cost-button" @click="inputCost">확인</button>
+    </div>
+    <div v-if="!time" class="food-list">
       <div v-for="food in foodList" :key="`food-${food.index}`" class="food" @click="clickFood(food)">
         <p>{{ food.name }}</p>
         <p>{{ food.cost }}원</p>
@@ -30,6 +34,7 @@ export default Vue.extend({
   data() {
     return {
       money: 0 as number,
+      cost: 0 as number,
       foodList: [
         {
           index: 0,
@@ -66,7 +71,7 @@ export default Vue.extend({
     const localMoney = window.localStorage.getItem('money');
     if (localMoney === null) {
       window.localStorage.setItem('money', '4300');
-      this.money = Number(window.localStorage.getItem('money'));
+      this.money = 4300;
     } else {
       this.money = Number(localMoney);
     }
@@ -87,6 +92,10 @@ export default Vue.extend({
       const sec = seconds % 60 < 10 ? `0${Math.floor(seconds % 60)}` : String(Math.floor(seconds % 60));
 
       return `${hour}시간 ${min}분 ${sec}초`;
+    },
+
+    inputCost(cost: number) {
+      this.time = this.changeHourMinSec(cost);
     },
   },
 });
