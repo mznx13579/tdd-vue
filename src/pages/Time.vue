@@ -64,9 +64,12 @@ export default Vue.extend({
 
   created() {
     const localMoney = window.localStorage.getItem('money');
-    console.log(localMoney);
-    localMoney === null ? '4300' : (this.money = Number(localMoney));
-    console.log(this.money);
+    if (localMoney === null) {
+      window.localStorage.setItem('money', '4300');
+      this.money = Number(window.localStorage.getItem('money'));
+    } else {
+      this.money = Number(localMoney);
+    }
   },
 
   methods: {

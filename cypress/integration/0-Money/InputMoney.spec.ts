@@ -1,8 +1,15 @@
 /// <reference types="cypress" />
+import 'cypress-localstorage-commands';
 
 describe('Input Money', () => {
+  before(() => {
+    // Do your login stuff here
+    cy.saveLocalStorage();
+  });
+
   beforeEach(() => {
     cy.visit('http://localhost:8080/money');
+    cy.restoreLocalStorage();
   });
 
   it('연봉을 입력하지 않고 다음 버튼을 누르면 알림 메세지가 표시된다.', () => {
