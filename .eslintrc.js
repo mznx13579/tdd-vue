@@ -49,7 +49,8 @@ module.exports = {
         'trailingComma': 'all',
         'bracketSpacing': true,
         'printWidth': 120,
-        'arrowParens': 'always'
+        'arrowParens': 'always',
+        'endOfLine': 'auto'
       }
     ],
   },

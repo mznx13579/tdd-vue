@@ -1,8 +1,11 @@
 <template>
   <div class="time">
-    <div class="time__cost">
+    <div v-if="showWarnMessage" class="warn">
+      <p class="warn-message">가격을 입력해주세요.</p>
+    </div>
+    <div v-if="!time" class="time__cost">
       <input v-model.number="cost" class="time__cost--input cost-input" />
-      <button class="cost-button" @click="inputCost">확인</button>
+      <button class="cost-button" @click="inputCost(cost)">확인</button>
     </div>
     <div v-if="!time" class="food-list">
       <div v-for="food in foodList" :key="`food-${food.index}`" class="food" @click="clickFood(food)">
@@ -35,6 +38,7 @@ export default Vue.extend({
     return {
       money: 0 as number,
       cost: 0 as number,
+      showWarnMessage: false as boolean,
       foodList: [
         {
           index: 0,
@@ -83,6 +87,18 @@ export default Vue.extend({
       this.time = this.changeHourMinSec(foodToSecond);
     },
 
+    inputCost(cost: number) {
+      if (cost === 0 || !cost) {
+        this.showWarnMessage = true;
+        setTimeout(() => {
+          this.showWarnMessage = false;
+        }, 2000);
+
+        return;
+      }
+      this.time = this.changeHourMinSec(cost / this.smallestUnit);
+    },
+
     changeHourMinSec(seconds: number): string {
       const hour = seconds / 3600 < 10 ? `0${Math.floor(seconds / 3600)}` : String(Math.floor(seconds / 3600));
       const min =
@@ -93,16 +109,21 @@ export default Vue.extend({
 
       return `${hour}시간 ${min}분 ${sec}초`;
     },
-
-    inputCost(cost: number) {
-      this.time = this.changeHourMinSec(cost);
-    },
   },
 });
 </script>
 
 <style scoped lang="scss">
 .time {
+  .time__cost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--input {
+      color: #676767;
+      width: 300px;
+    }
+  }
   .food-list {
     display: flex;
     flex-wrap: wrap;
