@@ -40,7 +40,7 @@ export default Vue.extend({
 
     confirm() {
       window.localStorage.setItem('money', String(this.money));
-      this.$router.push('/time');
+      this.$router.push('/select');
     },
   },
 });

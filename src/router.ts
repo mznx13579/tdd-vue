@@ -15,6 +15,16 @@ const routes: Array<RouteConfig> = [
     component: () => import('@/pages/Money.vue'),
   },
   {
+    path: '/select',
+    name: 'Select',
+    component: () => import('@/pages/Select.vue'),
+  },
+  {
+    path: '/stopwatch',
+    name: 'Stopwatch',
+    component: () => import('@/pages/Stopwatch.vue'),
+  },
+  {
     path: '/time',
     name: 'Time',
     component: () => import('@/pages/Time.vue'),
