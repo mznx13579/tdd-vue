@@ -43,7 +43,7 @@ describe('Input Money', () => {
           expect(localStorage.getItem('money')).to.eq('4300');
         });
 
-      cy.url().should('includes', '/time');
+      cy.url().should('includes', '/select');
     });
   });
 });
