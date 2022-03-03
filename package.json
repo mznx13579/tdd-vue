@@ -2,7 +2,7 @@
   "name": "tdd-vue",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://mznx13579.github.io/tdd-vue",
+  "homepage": "https://mznx13579.github.io/tdd-vue",
   "scripts": {
     "serve": "node ./deleteVuexType.ts --experimental-modules && vue-cli-service serve",
     "build": "vue-cli-service build",
