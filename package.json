@@ -2,6 +2,7 @@
   "name": "hw-ui-boiler-plate",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://mznx13579.github.io/tdd-vue",
   "scripts": {
     "serve": "node ./deleteVuexType.ts --experimental-modules && vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,7 +10,9 @@
     "test": "jest --watch --verbose --coverage",
     "lint": "vue-cli-service lint",
     "postinstall": "node ./deleteVuexType.ts --experimental-modules",
-    "e2e": "node ./node_modules/cypress/bin/cypress open"
+    "e2e": "node ./node_modules/cypress/bin/cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -54,6 +57,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^3.2.3",
     "jest": "^26.6.3",
     "jest-plugin-context": "^2.9.0",
     "moment-locales-webpack-plugin": "^1.2.0",
