@@ -2,7 +2,8 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  outputDir: 'docs',
+  publicPath: '',
+  outputDir: './docs',
   pluginOptions: {
     i18n: {
       locale: 'ko-KR',
