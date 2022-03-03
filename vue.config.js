@@ -2,8 +2,7 @@ const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  publicPath: '/tdd-vue',
-  outputDir: 'docs',
+  publicPath: '/tdd-vue/',
   pluginOptions: {
     i18n: {
       locale: 'ko-KR',
